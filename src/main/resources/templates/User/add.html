@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
+<head th:replace="fragments :: headFragment" th:with="pageTitle='User Login'">
     <meta charset="UTF-8">
     <title>Add USer</title>
 </head>
 <body>
-    <form action="/user" method="post">
-        <h1 th:if="${error}" th:text="${error}"></h1>
-        <label>Username<input type="text" name="username" th:value="${username}"></label>
-        <label>Email<input type="email" name="email" th:value="${email}"></label>
-        <label>Password<input type="password" name="password"></label>
-        <label>Confirm Password<input type="password" name="verify"></label>
-        <input type="submit" value="Submit">
+
+<div class="container">
+    <form action="/user" method="post" class="form-control">
+        <p th:if="${error}" th:text="${error}" class="alert alert-warning"></p>
+        <label>Username<input type="text" name="username" th:value="${username}" class="form-control"></label>
+        <label>Email<input type="email" name="email" th:value="${email}" class="form-control"></label>
+        <label>Password<input type="password" name="password" class="form-control"></label>
+        <label>Confirm Password<input type="password" name="verify" class="form-control"></label>
+        <input type="submit" value="Submit" class="btn btn-primary">
     </form>
+</div>
+
 </body>
 </html>

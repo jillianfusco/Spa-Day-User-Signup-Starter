@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
-<head>
+<head th:replace="fragments :: headFragment" th:with="pageTitle='Menu'">
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
-<div id = "clientProfile">
+<div id = "clientProfile" class="container">
     <h2>My Profile</h2>
     <p th:text = "${client.skinType}"></p>
     <p th:text = "${client.nailService}"></p>
 </div>
-<div id = "servicesMenu">
+<div id = "servicesMenu" class="container">
     <h2>Menu of Available Services</h2>
     <div>
         <h3>Facial Treatments</h3>
